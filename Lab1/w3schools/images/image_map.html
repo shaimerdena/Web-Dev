@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Image Maps</title>
+    </head>
+    <body>
+        <!-- shape = rect/circle -->
+        <img src="workplace.jpg" alt="Workplace" usemap="#workmap">
+
+        <map name="workmap">
+        <area shape="rect" coords="34,44,270,350" alt="Computer" href="https://en.wikipedia.org/wiki/Laptop">
+        <area shape="rect" coords="290,172,333,250" alt="Phone" href="https://en.wikipedia.org/wiki/Telephone">
+        <area shape="circle" coords="337,300,44" alt="Coffee" href="https://en.wikipedia.org/wiki/Coffee">
+        </map>
+
+
+        <!-- shape = poly -->
+        <img src = "frenchfood.jpg" alt = "French Food" usemap = "#croissant">
+        <map name = "croissant">
+            <area shape="poly" coords="140,121,181,116,204,160,204,222,191,270,140,329,85,355,58,352,37,322,40,259,103,161,128,147" href="https://en.wikipedia.org/wiki/Croissant">
+        </map>
+
+
+        <!-- using javascript -->
+        <img src = "workplace.jpg" alt = "Workplace" usemap = "#workjs">
+        <map name="workjs">
+            <area shape="circle" coords="337,300,44" href="https://en.wikipedia.org/wiki/Coffee" onclick="myFunction()">
+        </map>
+
+        <script>
+            function myFunction() {
+            alert("You clicked the coffee cup!");
+            }
+        </script>
+    </body>
+</html>
