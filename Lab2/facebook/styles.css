@@ -40,10 +40,6 @@ body{
     font-size: 14px;
 }
 
-.text2:hover{
-    text-decoration: underline;
-}
-
 .together2{
     float: center;
     text-align: center;
@@ -98,10 +94,6 @@ body{
     color: #0866ff;
     text-decoration: none;
     font-size: 14px;
-}
-
-.forget_pass:hover{
-    text-decoration: underline;
 }
 
 .line{
@@ -197,4 +189,8 @@ body{
 span{
     color: #8A8D91;
     font-size: 12px;
+}
+
+.links:hover{
+    text-decoration: underline;
 }
