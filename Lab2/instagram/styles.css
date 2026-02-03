@@ -1,0 +1,212 @@
+html, body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: #0C1014;
+    font-family: Instagram Sans Regular !important;
+}
+
+.together{
+    flex: 1;
+    display: flex;
+    /* align-items: stretch; */
+    gap: 20px;
+}
+
+.section{
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.left{
+    flex: 1;
+    background-color: #0C1014;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 260px;
+}
+
+.logo_and_text{
+    margin-top: 40px;
+}
+
+.img1{
+    width: 75px;
+    display: block;
+    align-self: center;
+}
+
+.emphasize_words{
+    background-image: url("/Lab2/instagram/img/insta_back.jpeg");
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.logo{
+    width: 20px;
+}
+
+.words{
+    font-size: 40px;
+    margin-top: 20px;
+    line-height: 55px;
+    text-align: center;
+}
+
+.img{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.image{
+    height: 480px;
+    align-self: center;
+}
+
+.right{
+    display: flex;
+    background-color: #142127;
+    justify-content: center;
+    flex: 1;
+    padding: 20px;
+    border-left: 2px solid #3d505c;
+}
+
+.together2{
+    font-family: Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.voiti{
+    width: 500px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.text{
+    color: #F1F4F7;
+    font-size: 17px;
+}
+
+.form{
+    width: 475px;
+    height: 38px;
+    border-radius: 15px;
+    border: 1px solid #445664;
+    background-color: #142127;
+    padding: 10px 16px;
+    color: white;
+    font-size: 14px;
+}
+
+.form::placeholder{
+    color: #96a7b4;
+    font-size: 17px;
+}
+
+.form:focus{
+    outline: none;
+    border: 1px solid #96a7b4;
+}
+
+.form:hover{
+    border: 1px solid #96a7b4;
+}
+
+.btn{
+    background-color: #0064E0;
+    width: 500px;
+    height: 45px;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    font-size: 15px;
+}
+
+.btn:hover{
+    background-color: #0052ba;
+    cursor: pointer;
+}
+
+.btn:active{
+    background-color: #0052ba;
+}
+
+.forget_pass{
+    width: 500px;
+    height: 45px;
+    text-align: center;
+    border-radius: 25px;
+    align-items: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.forget_pass p{
+    color: #F1F4F7;
+    text-decoration: none;
+}
+
+.forget_pass:hover{
+    background-color: #2f383c;
+}
+
+.zabyl{
+    text-decoration: none;
+}
+
+.facebook{
+    text-decoration:none;
+    border: 1px solid #445664;
+}
+
+.mini_face{
+    width: 20px;
+    margin-right: 10px;
+}
+
+.new{
+    text-decoration: none;
+    color: #4699ff;
+    border: 1px solid #4699ff;
+}
+
+.icon_meta{
+    width: 60px;
+}
+
+.footer{
+    background-color: #0b1014;
+    border-top: 1px solid #3d505c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    height: 70px;
+    padding-top: 10px;
+}
+
+.footer a,.footer p{
+    text-decoration: none;
+    color: #a8a8a8;   
+    margin-top: auto;
+}
+/* color of form: #96a7b4 */
