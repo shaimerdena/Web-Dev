@@ -1,0 +1,202 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+}
+
+.together{
+    margin-bottom: 50px;
+}
+
+.heading{
+    color: #1F2328;
+    font-size: 64px;
+    font-weight: 800 !important;
+}
+
+.text{
+    margin-top: 50px;
+    padding-bottom: 80px;
+}
+
+.format{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.font{
+    font-family: "Mona Sans","Mona Sans Header Fallback",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+.together3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.description{
+    color: #59636E;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btn{
+    font-size: 16px;
+    font-weight: 600;
+    margin: 15px 0 0;
+    padding: 16px 24px;
+    background: linear-gradient(to bottom, #35383e, #1B1F23);
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;     
+}
+
+.btn:hover{
+    background: linear-gradient(to bottom, #43484c, #1B1F23);
+    box-shadow: 0 4px 20px rgba(27, 31, 35, 0.15);
+}
+
+.tier_cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.heading_card h2{
+    margin: 16px 0 0;
+}
+
+.heading_card p{
+    font-size: 14px;
+    color: #59636E;
+    text-align: center;
+}
+
+.sup{
+    font-size: 40px;
+}
+
+.price{
+    font-size: 48px;
+    color: black;
+}
+
+.sub{
+    font-size: 24px;
+    color: black;
+    margin: 0 0 8px 4px;
+}
+
+.unit{
+    font-size: 14px;
+    vertical-align: super;
+}
+
+.format1{
+    width: 380px;
+    height: 830px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px 10px #b9b9b9;
+}
+
+.price_btn{
+    text-decoration: none;;
+    width: 355px;
+    height: 50px;
+    border: 1px solid #d5d5d5;
+    border-radius: 8px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+}
+
+.price_btn:hover{
+    border: 2px solid #1B1F23;
+}
+
+.team_btn{
+    color: white;
+    border: none;
+    background: linear-gradient(to bottom, #35383e, #1B1F23);
+}
+
+.team_btn:hover{
+    background: linear-gradient(to bottom, #555b60, #1B1F23);
+    box-shadow: 0 4px 20px rgba(27, 31, 35, 0.15);
+    border: none;
+}
+
+.enterprise_btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.free_btn{
+    width: 150px;
+    margin-right: 20px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background: linear-gradient(to bottom, #35383e, #1B1F23);
+    color: white;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.free_btn:hover{
+    background: linear-gradient(to bottom, #555b60, #1B1F23);
+    box-shadow: 0 4px 20px rgba(27, 31, 35, 0.15);
+}
+
+.sales_btn{
+    width: 150px;
+}
+
+.main_point{
+    line-height: 30px;
+    font-size: 14px;
+}
+
+ul{
+    font-weight: 600;
+    color: #59636e;
+}
+
+.featured{
+    color: #086ada;
+}
+
+.add-ons{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    grid-template-columns: auto auto auto;
+}
+
+.format2{
+    width: 380px;
+    height: 215px;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px #e8e8e8;
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+}
+
+.format2:hover{
+    box-shadow: 0 10px 20px rgba(27, 31, 35, 0.15);
+    /* width: 385px;
+    height: 220px; */
+}
+
