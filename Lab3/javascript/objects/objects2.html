@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            "use strict";
+            // property value shorthand
+            function makeUser(name, age) {
+                return {
+                    name, // same as name: name
+                    age,  // same as age: age
+                    // ...
+                };
+            }
+
+
+            // property existence test
+            let user = {};
+            alert( user.noSuchProperty === undefined ); // true means "no such property"
+
+            // using "in" operator
+            let user1 = { name: "John", age: 30 };
+            alert( "age" in user1 ); // true, user.age exists
+            alert( "blabla" in user1 ); // false, user.blabla doesn't exist
+
+            let key = "age";
+            alert( key in user1 ); // true, property "age" exists
+
+
+
+            // for..in loop
+            let user2 = {
+                name: "John",
+                age: 30,
+                isAdmin: true
+            };
+
+            for (let key in user2) {
+                // keys
+                console.log( key );  // name, age, isAdmin
+                // values for the keys
+                console.log( user[key] ); // John, 30, true
+            }
+
+            let user3 = {
+                name: "John", 
+                surname: "Smith",
+            }
+            user3.name = "Pete";
+            delete user3.name;
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            // how garbage collector works?
+
+
+            // step 1
+            // user has a reference to the object
+            let user = {
+                name: "John"
+            };
+            // step 2: the value of user is overwritten, the value is lost
+            user = null;
+            // garbage collector will junk the data and free the memory
+
+
+            // 2 references
+            // step 1: user has a reference to the object
+            let admin = user;
+            // step 2:  if we do the same:
+            user = null;
+            /*
+            the object is still reachable via admin global variable, 
+            so it must stay in memory. 
+            If we overwrite admin too, then it can be removed.
+            */
+
+
+            // other ways of garbaging: interlinked objects,
+            // unreachable island
+        </script>
+    </body>
+</html>

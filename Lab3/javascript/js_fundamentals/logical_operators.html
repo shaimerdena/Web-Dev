@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            "use strict";
+            // || (OR), && (AND), ! (NOT), ?? (Nullish Coalescing)
+
+
+
+            // If all operands have been evaluated (i.e. all were false), returns the last operand.
+            result = value1 || value2 || value3;
+
+            //OR || chooses the one that has the data
+            let firstName = "";
+            let lastName = "";
+            let nickName = "SuperCoder";
+            console.log( firstName || lastName || nickName || "Anonymous");
+
+
+            // "short circuit" evalution
+            /*    
+            || processes its arguments until the first truthy value is reached, 
+            and then the value is returned immediately, 
+            without even touching the other argument.
+            */
+            true || console.log("not printed");
+            false || console.log("printed");
+
+
+
+
+            // AND “&&” finds the first falsy value
+            if (1 && 0) { // evaluated as true && false
+            alert( "won't work, because the result is falsy" );
+            }
+
+            // if the first operand is truthy,
+            // AND returns the second operand:
+            console.log( 1 && 0 ); // 0
+            console.log( 1 && 5 ); // 5
+
+            // if the first operand is falsy,
+            // AND returns it. The second operand is ignored
+            console.log( null && 5 ); // null
+            console.log( 0 && "no matter what" ); // 0
+
+
+
+
+            //NOT operand
+            console.log( !true ); // false
+            console.log( !0 ); // true
+
+
+
+            //Nullish coalescing operator '??'
+            // ?? returns the first argument if it’s not null/undefined. 
+
+            result = (a !== null && a !== undefined) ? a : b;
+
+            let user;
+            console.log(user ?? "Anonymous");
+
+
+            // || returns the first truthy value.
+            // ?? returns the first defined value.
+        </script>
+    </body>
+</html>

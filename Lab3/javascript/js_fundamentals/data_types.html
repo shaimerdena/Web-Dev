@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            "use strict"
+
+            // no error: dynamically typed
+            let message = "hello";
+            message = 123456;
+
+
+            //special numeric values
+            alert( 1 / 0 ); // Infinity
+            alert( Infinity ); // Infinity
+            alert( "not a number" / 2 ); // NaN, such division is erroneous
+
+
+            // the "n" at the end means it's a BigInt
+            const bigInt = 1234567890123456789012345678901234567890n;
+
+
+            let name = "John";
+            // embed a variable
+            alert( `Hello, ${name}!` ); // Hello, John!
+            // embed an expression
+            alert( `the result is ${1 + 2}` ); // the result is 3
+
+
+            // boolean type
+            let isGreater = 4 > 1;
+            alert( isGreater ); // true (the comparison result is "yes")
+
+
+            let age = null; //states that age is unknown: not a “reference to a non-existing object” or a “null pointer”
+            let year;
+            alert(year); // shows "undefined"
+
+            
+            // typeof operater
+            typeof undefined // "undefined"
+            typeof 0 // "number"
+            console.log(typeof 10n) // "bigint"
+            typeof true // "boolean"
+            typeof "foo" // "string"
+            typeof Symbol("id") // "symbol"
+            typeof Math // "object"  (1)
+            typeof null // "object"  (2)
+            typeof alert // "function"  (3)
+        </script>
+    </body>
+</html>

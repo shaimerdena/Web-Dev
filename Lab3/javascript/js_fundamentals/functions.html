@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<hmtl>
+    <head></head>
+    <body>
+        <script>
+            function showMessage() {
+            alert( 'Hello everyone!' );
+            }
+            showMessage();
+
+
+            let userName = 'John';
+
+            function showMessage() {
+            let userName = "Bob"; // declare a local variable
+
+            let message = 'Hello, ' + userName; // Bob
+            alert(message);
+            }
+
+            // the function will create and use its own userName
+            showMessage();
+
+            alert( userName ); // John, unchanged, the function did not access the outer variable
+
+
+
+            function showMessage(from, text = "no text given") {        //text is default
+            alert( from + ": " + text );
+            }
+
+            showMessage("Ann"); // Ann: no text given
+        </script>
+    </body>
+</hmtl>

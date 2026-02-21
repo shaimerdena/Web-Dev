@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            // creating an empty object
+            // let user = new Object(); // "object constructor" syntax
+            // let user = {};  // "object literal" syntax
+
+            let user = {     // an object
+                name: "John",  // by key "name" store value "John"
+                age: 30,        // by key "age" store value 30
+                "likes birds": true,  // multiword property name must be quoted
+            };
+
+            // get property values of the object:
+            alert( user.name ); // John
+            alert( user.age ); // 30
+
+            //adding new property
+            user.isAdmin = true;
+
+            //deleting property
+            delete user.age;
+
+            // accessing muliword property
+            alert(user["likes birds"]); 
+
+            // accessing the property by user input
+            let key = prompt("What do you want to know about the user?", "name");
+            // access by variable
+            alert( user[key] ); // John (if enter "name")
+
+
+            // computed properties
+            let fruit = prompt("Which fruit to buy?", "apple");
+            let bag = {
+            [fruit]: 5, // the name of the property is taken from the variable fruit
+            };
+            alert( bag.apple ); // 5 if fruit="apple"
+        </script>
+    </body>
+</html>

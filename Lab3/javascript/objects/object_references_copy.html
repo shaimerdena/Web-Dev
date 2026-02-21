@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script> 
+            let message = "Hello!";
+            let phrase = message;   //we put a copy of message into phrase
+
+
+            // When an object variable is copied, the reference is copied, but the object itself is not duplicated.
+            let user = { name: "John" };
+            let admin = user; // copy the reference
+
+
+            // the value of user1 is constant
+            // it must always reference the same object
+            // but properties of that object are free to change 
+            const user1 = {
+                name: "John"
+            };
+            user.name = "Pete"; // (*)
+            alert(user.name); // Pete
+
+        
+            // object.assign
+            // The first argument dest is a target object.
+            // Further arguments is a list of source objects.
+            // It copies the properties of all source objects into the target dest, 
+            // and then returns it as the result.
+            let permissions1 = { canView: true };
+            let permissions2 = { canEdit: true };
+            Object.assign(user, permissions1, permissions2);
+            alert(user.name); // John
+            alert(user.canView); // true
+            alert(user.canEdit); // true
+
+
+            // cloning
+            let clone = Object.assign({}, user);
+            alert(clone.name); // John
+            alert(clone.age); // 30
+        </script>
+    </body>
+</html>
