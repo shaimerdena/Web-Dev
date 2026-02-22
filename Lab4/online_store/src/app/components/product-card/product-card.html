@@ -1,0 +1,36 @@
+<!-- <div class="card">
+  <img [src]="product.image" alt="product image">
+  <h2>{{ product.name }}</h2>
+  <p>{{ product.description }}</p>
+  <p>Цена: {{ product.price }}</p>
+  <p>Рейтинг: {{ product.rating }}</p>
+  <a [href]="product.link" target="_blank">Купить</a>
+</div> -->
+
+
+<div class="card">
+  <img [src]="product.image" alt="product image">
+
+  <div class="card-content">
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.description }}</p>
+
+    <div class="price">{{ product.price }} ₸</div>
+    <div class="rating">⭐ {{ product.rating }}</div>
+
+    <div class="buttons">
+      <a class="buy-btn"
+         [href]="product.link"
+         target="_blank">
+        Купить
+      </a>
+
+      <a class="tg-btn"
+         [href]="'https://t.me/share/url?url=' + product.link + '&text=' + product.name"
+         target="_blank">
+        Telegram
+      </a>
+    </div>
+
+  </div>
+</div>
