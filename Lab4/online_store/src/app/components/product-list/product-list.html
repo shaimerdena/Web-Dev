@@ -1,6 +1,19 @@
+<div class="controls">
+  <input
+    type="text"
+    placeholder="Search..."
+    [(ngModel)]="searchText"
+  />
+
+  <select [(ngModel)]="sortDirection">
+    <option value="">Sort</option>
+    <option value="asc">Price: Low → High</option>
+    <option value="desc">Price: High → Low</option>
+  </select>
+</div>
 <div class="container">
   <app-product-card
-    *ngFor="let product of products"
+    *ngFor="let product of filteredProducts"
     [product]="product">
   </app-product-card>
 </div>
