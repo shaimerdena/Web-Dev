@@ -1,0 +1,10 @@
+<p>student-list works!</p>
+<button (click) = "toggleList()">
+    toggle list
+</button>
+<ul *ngIf = "showList">
+    <li *ngFor = "let student of students">{{student}}</li>
+</ul>
+<img [src]="imageUrl">
+<input {[NgModel]}="newStudent">
+<p>You typed: {{ newStudent }}</p>
