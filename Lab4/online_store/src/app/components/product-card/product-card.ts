@@ -13,4 +13,11 @@ import { Input } from '@angular/core';
 })
 export class ProductCard {
   @Input() product!: Product;
+
+  getTelegramURL(): string{
+    const url = encodeURIComponent(this.product.link);
+    const text = encodeURIComponent(`Check out this product: ${this.product.name}`);
+
+    return `https://t.me/share/url?url=${url}&text=${text}`;
+  }
 }
