@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component,input,output } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 import { Product } from '../../models/product.model';
 import { ProductCard } from '../product-card/product-card';
 import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-product-list',
@@ -12,14 +13,18 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './product-list.css',
 })
 export class ProductListComponent {
-  products: Product[] = [
-];
+  products = input.required<Product[]>();
+  removeProduct = output<number>();
+
+  handleRemove(id: number) {
+    this.removeProduct.emit(id);
+  }
 
   searchText: string = '';
   sortDirection: string = '';
 
   get filteredProducts(): Product[] {
-    let filtered = this.products.filter(product =>
+    let filtered = this.products().filter(product =>
       product.name.toLowerCase().includes(this.searchText.toLowerCase())
     );
 

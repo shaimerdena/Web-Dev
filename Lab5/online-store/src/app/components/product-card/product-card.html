@@ -1,36 +1,30 @@
-<!-- <div class="card">
-  <img [src]="product.image" alt="product image">
-  <h2>{{ product.name }}</h2>
-  <p>{{ product.description }}</p>
-  <p>Цена: {{ product.price }}</p>
-  <p>Рейтинг: {{ product.rating }}</p>
-  <a [href]="product.link" target="_blank">Купить</a>
-</div> -->
-
-
 <div class="card">
-  <img [src]="product.image" alt="product image">
-
+  <img [src]="product().image" alt="photo">
+  
   <div class="card-content">
-    <h2>{{ product.name }}</h2>
-    <p>{{ product.description }}</p>
-
-    <div class="price">{{ product.price }} ₸</div>
-    <div class="rating">⭐ {{ product.rating }}</div>
-
-    <div class="buttons">
-      <a class="buy-btn"
-         [href]="product.link"
-         target="_blank">
-        Купить
-      </a>
-
-      <a class="tg-btn"
-         [href]="'https://t.me/share/url?url=' + product.link + '&text=' + product.name"
-         target="_blank">
-        Telegram
-      </a>
+    <h3>{{ product().name }}</h3>
+    
+    <div class="description-container">
+      <p class="description-text">{{ product().description }}</p>
+    </div>
+    
+    <div class="info-row">
+      <p class="price">{{ product().price }} ₸</p>
+      <div class="stats">
+        <span>⭐ {{ product().rating }}</span>
+        <span>❤️ {{ localLikes }}</span>
+      </div>
     </div>
 
+    <div class="actions">
+      <div class="main-buttons">
+        <a class="buy-btn" [href]="product().link" target="_blank">Купить</a>
+        <a class="tg-btn" [href]="getTelegramUrl()" target="_blank">Share</a>
+      </div>
+      <div class="admin-buttons">
+        <button (click)="like()" class="like-btn">Like</button>
+        <button (click)="deleteMe()" class="delete-btn">Delete</button>
+      </div>
+    </div>
   </div>
 </div>

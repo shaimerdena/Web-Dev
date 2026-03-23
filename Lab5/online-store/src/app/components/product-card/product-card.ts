@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { Product } from '../../models/product.model';
-import { Input } from '@angular/core';
 
 
 @Component({
@@ -12,5 +11,25 @@ import { Input } from '@angular/core';
   styleUrl: './product-card.css',
 })
 export class ProductCard {
-  @Input() product!: Product;
+  product = input.required<Product>();
+  remove = output<number>();
+
+  isLiked = false;
+  localLikes = 0;
+
+  ngOnInit() {
+    this.localLikes = this.product().likes;
+  }
+
+  like() {
+    this.localLikes++;
+    this.isLiked = true;
+  }
+  deleteMe(){
+    this.remove.emit(this.product().id);
+  }
+  getTelegramUrl(){
+    const p = this.product();
+    return `https://t.me/share/url?url=${encodeURIComponent(p.link)}&text=${encodeURIComponent(p.name)}`;
+  }
 }
