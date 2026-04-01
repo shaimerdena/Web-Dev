@@ -13,6 +13,14 @@ class ProductSerializer(serializers.ModelSerializer):
         source='category', 
         write_only=True
     )
+    def validate_is_active(self, value):
+        if value is False:
+            raise serializers.ValidationError("product must be active")
+        return value
+    def validate_count(self, value):
+        if value == 0:
+            raise serializers.ValidationError('count should be more than 0')
+        return value
     class Meta:
         model = Product
         fields = ['id', 'name', 'price', 'description', 'count', 'is_active', 'category', 'category_id']
