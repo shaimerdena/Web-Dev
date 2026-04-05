@@ -1,10 +1,10 @@
-from serializers import ProductSerializer
-from .models import Product
+from api.models import Product
+from api.serializers import ProductSerializer
 from rest_framework import mixins, generics
 
 class ProductListAPIView(mixins.ListModelMixin,
                          mixins.CreateModelMixin,
-                         mixins.GenericAPIView):
+                         generics.GenericAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
@@ -14,19 +14,19 @@ class ProductListAPIView(mixins.ListModelMixin,
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
     
-class ProductDetailAPIView(mixins.ListModelMixin,
-                           mixins.UpdateModeMixin,
+class ProductDetailAPIView(mixins.RetrieveModelMixin,
+                           mixins.UpdateModelMixin,
                            mixins.DestroyModelMixin,
-                           mixins.GenericAPIView):
+                           generics.GenericAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     lookup_url_kwarg = 'product_id'
 
-    def get(self, request, product_id):
-        return self.retrieve(request, product_id)
+    def get(self, request, *args, **kwargs):
+        return self.retrieve(request, *args, **kwargs)
     
-    def put(self, request, product_id):
-        return self.update(request, product_id)
+    def put(self, request, *args, **kwargs):
+        return self.update(request, *args, **kwargs)
     
-    def delete(self, request, product_id):
-        return self.destroy(request, product_id)
+    def delete(self, request, *args, **kwargs):
+        return self.destroy(request, *args, **kwargs)

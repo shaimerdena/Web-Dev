@@ -1,7 +1,7 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .model import Product
-from .serializers import ProductSerializer
+from api.models import Product
+from api.serializers import ProductSerializer
 from rest_framework import status
 
 @api_view(['GET', 'POST'])
@@ -11,7 +11,7 @@ def product_list(request):
         serializer = ProductSerializer(products, many = True)
         return Response(serializer.data)
     
-    if request.method == 'POST':
+    elif request.method == 'POST':
         serializer = ProductSerializer(data = request.data)
         if serializer.is_valid():
             serializer.save()
@@ -29,13 +29,13 @@ def product_detail(request, product_id):
         serializer = ProductSerializer(product)
         return Response(serializer.data)
     
-    if request.method == 'PUT':
+    elif request.method == 'PUT':
         serializer = ProductSerializer(product,data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors, status = status.HTTP_400_BAD_REQUEST)
     
-    if request.method == 'DELETE':
+    elif request.method == 'DELETE':
         product.delete()
         return Response(status = status.HTTP_204_NO_CONTENT)

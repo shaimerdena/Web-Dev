@@ -1,8 +1,9 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .models import Product
-from .serializers import ProductSerializer
+from api.models import Product
+from api.serializers import ProductSerializer
+from django.http import Http404
 
 class ProductListAPIView(APIView):
     def get(self, request):
@@ -22,11 +23,11 @@ class ProductDetailAPIView(APIView):
         try:
             return Product.objects.get(id = product_id)
         except Product.DoesNotExist:
-            return Response(status = status.HTTP_404_NOT_FOUND)
+            raise Http404
         
     def get(self, request, product_id):
         product = self.get_object(product_id)
-        serializer = ProductSerializer(data = request.data)
+        serializer = ProductSerializer(product)
         return Response(serializer.data)
     
     def put(self, request, product_id):
