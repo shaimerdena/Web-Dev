@@ -29,3 +29,13 @@ urlpatterns = [
     path('categories/<int:category_id>/', CategoryDetailAPIView.as_view()),
     path('categories/<int:category_id>/products/', CategoryProductsAPIView.as_view()),
 ]
+
+# urlpatterns = [
+#     path('products/', ProductListAPIView.as_view()),
+#     path('products/<int:product_id>/', ProductDetailAPIView.as_view()),
+# ]
+
+# urlpatterns = [
+#     path('products/', product_list),
+#     path('products/<int:product_id>/', product_detail),
+# ]
