@@ -21,6 +21,20 @@ class ProductSerializer(serializers.ModelSerializer):
         if value == 0:
             raise serializers.ValidationError('count should be more than 0')
         return value
+    def validate(self, data):
+        name = data.get('name')
+        price = data.get('price')
+        category = data.get('category')
+
+        queryset = Product.objects.filter(name=name, price = price, category=category)
+        
+        if self.instance:
+            queryset = queryset.exclude(pk=self.instance.pk)
+
+        if queryset.exists():
+            raise serializers.ValidationError("product with these name, id and category already exists")
+        
+        return data
     class Meta:
         model = Product
         fields = ['id', 'name', 'price', 'description', 'count', 'is_active', 'category', 'category_id']
